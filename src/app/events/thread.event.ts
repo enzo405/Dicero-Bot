@@ -2,7 +2,6 @@ import type { ArgsOf } from 'discordx'
 import { Discord, On } from 'discordx'
 import { config } from '../config/config.js'
 import threadService from '../services/habby/thread.service.js'
-import { ForumChannel } from 'discord.js'
 
 @Discord()
 export class ThreadListener {
