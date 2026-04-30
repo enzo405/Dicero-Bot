@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"declaration": false,
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"sourceMap": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"strictPropertyInitialization": false,
+		"noUnusedParameters": false,
+		"noUnusedLocals": false,
+		"stripInternal": true,
+		"target": "ES2022",
+		"module": "ES2022",
+		"moduleResolution": "bundler",
+		"skipLibCheck": true,
+		"lib": ["ES2022"],
+		"strict": true,
+		"typeRoots": ["./node_modules/@types"],
+		"types": ["node"],
+		"esModuleInterop": true
+	},
+	"include": ["./src/**/*.ts"],
+	"exclude": ["./node_modules", "./dist"],
+	"ts-node": {
+		"esm": true
+	},
+	"indent": [true, "spaces", 2]
+}

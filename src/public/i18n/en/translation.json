@@ -1,0 +1,55 @@
+{
+	"command": {
+		"ping": {
+			"description": "ping command",
+			"response": "Pong ! 🏓 Latency is {{messageLatency}}ms. API Latency is {{apiLatency}}ms. Bot Version {{appVersion}}"
+		},
+		"close": {
+			"description": "Close and archive a post (access restricted)",
+			"paramsDescription": {
+				"reason": "Reason for closing the post"
+			}
+		},
+		"trackroles": {
+			"description": "Command to setup role update to track on the server.",
+			"paramsDescription": {
+				"role": "Role to track or untrack",
+				"track": "True to track the role, False to untrack it (default True)",
+				"channel": "Channel to log the role updates"
+			}
+		},
+		"modping-setup": {
+			"embed": {
+				"title": "🌍 Mod Ping — Timezone Subscription",
+				"description": "Subscribe to your timezone group to receive <@&{{modPingRoleId}}> only during your active hours (8am → 2am local time).\n\nClick a button below to toggle your timezone role.\nYou can select **multiple** groups if needed.\n\n> Members with **no role selected** will receive Mod Ping **24/7**.",
+				"field_active": "Active: **{{start}} → {{end}} (local time)**",
+				"timezone": {
+					"west-americas": "West Americas",
+					"east-americas": "East Americas",
+					"europe-africa": "Europe & Africa",
+					"middle-east-india": "Middle East & India",
+					"asia-pacific": "Asia & Pacific"
+				},
+				"more_info": "More info"
+			},
+			"info": {
+				"no_role": "You have no timezone role selected. You will receive <@&{{modPingRoleId}}> mentions **24/7**.",
+				"active_roles": "🕐 Your **@Mod Ping** will be active during these hours:\n\n{{schedules}}",
+				"schedule_line": "**{{label}}** — {{start}} → {{end}}"
+			},
+			"response": {
+				"success": "✅ ModPing embed sent in <#{{channelId}}>",
+				"unknown_group": "❌ Unknown timezone group.",
+				"role_not_found": "❌ Role not found.",
+				"role_added": "✅ Added **{{label}}** to your roles. You'll receive <@&{{modPingRoleId}}> during your active hours.",
+				"role_removed": "✅ Removed **{{label}}** from your roles. *Note that if you don't have any other active timezone roles, you will receive <@&{{modPingRoleId}}> 24/7.*"
+			}
+		},
+		"global": {
+			"error": {
+				"noCommandMatching": "No command matching {{commandName}} was found",
+				"occurred": "An error occurred while executing {{commandName}}"
+			}
+		}
+	}
+}

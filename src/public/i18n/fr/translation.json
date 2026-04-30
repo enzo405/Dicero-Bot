@@ -1,0 +1,55 @@
+{
+	"command": {
+		"ping": {
+			"description": "commande ping",
+			"response": "Pong ! 🏓 La latence est de {{messageLatency}}ms. La latence de l'API est de {{apiLatency}}ms. Bot Version {{appVersion}}"
+		},
+		"close": {
+			"description": "Ferme et archive un post (accès restreint)",
+			"paramsDescription": {
+				"reason": "Raison de la fermeture du post"
+			}
+		},
+		"trackroles": {
+			"description": "Commande pour gérer les mise à jour de role sur le serveur.",
+			"paramsDescription": {
+				"role": "Role a traquer ou ne plus traquer",
+				"track": "True pour traquer le role, False pour ne plus le traquer (True par défaut)",
+				"channel": "Salon où envoyer les message de modification de role"
+			}
+		},
+		"modping-setup": {
+			"embed": {
+				"title": "🌍 Mod Ping — Abonnement Fuseau Horaire",
+				"description": "Abonne-toi à ton groupe de fuseau horaire pour recevoir <@&{{modPingRoleId}}> uniquement pendant tes heures actives (8h → 2h heure locale).\n\nClique sur un bouton ci-dessous pour activer/désactiver ton rôle de fuseau horaire.\nTu peux sélectionner **plusieurs** groupes si besoin.\n\n> Les membres **sans rôle sélectionné** recevront le Mod Ping **24h/24**.",
+				"field_active": "Actif : **{{start}} → {{end}} (heure locale)**",
+				"timezone": {
+					"west-americas": "Amériques Ouest",
+					"east-americas": "Amériques Est",
+					"europe-africa": "Europe & Afrique",
+					"middle-east-india": "Moyen-Orient & Inde",
+					"asia-pacific": "Asie & Pacifique"
+				},
+				"more_info": "Plus d'infos"
+			},
+			"info": {
+				"no_role": "Tu n'as aucun rôle de fuseau horaire sélectionné. Tu recevras les mentions <@&{{modPingRoleId}}> **24h/24**.",
+				"active_roles": "🕐 Ton **@Mod Ping** sera actif durant ces horaires :\n\n{{schedules}}",
+				"schedule_line": "**{{label}}** — {{start}} → {{end}}"
+			},
+			"response": {
+				"success": "✅ Embed ModPing envoyé dans <#{{channelId}}>",
+				"unknown_group": "❌ Groupe de fuseau horaire inconnu.",
+				"role_not_found": "❌ Rôle introuvable.",
+				"role_added": "✅ Rôle **{{label}}** ajouté. Tu recevras <@&{{modPingRoleId}}> pendant tes heures actives.",
+				"role_removed": "✅ Rôle **{{label}}** retiré. *Note que si tu n'as plus aucun rôle de fuseau horaire actif, tu recevras <@&{{modPingRoleId}}> 24h/24.*"
+			}
+		}
+	},
+	"global": {
+		"error": {
+			"noCommandMatching": "Aucune commande correspondant à {{commandName}} n'a été trouvée",
+			"occurred": "Une erreur s'est produite lors de l'exécution de {{commandName}}"
+		}
+	}
+}
