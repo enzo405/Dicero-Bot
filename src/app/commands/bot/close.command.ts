@@ -111,7 +111,7 @@ const buildEmbed = (reason: string, threadId: string) => {
 	return new EmbedBuilder()
 		.setTitle('Thread Closed')
 		.setDescription(
-			`We have decided to close this thread for now.\nReason: ${reason}\n\nIf you believe this was closed in error, feel free to reach out in <#1326343230119477362>\n\nThanks again for helping improve the experience! 🙌`
+			`We have decided to close this thread for now.\nReason: ${reason}\n\nIf you believe this was closed in error, feel free to reach out in <#${config.SUPPORT_CHANNEL_ID}>\n\nThanks again for helping improve the experience! 🙌`
 		)
 		.setColor('Blue')
 		.setFooter({ text: `Thread ID: ${threadId}` })
