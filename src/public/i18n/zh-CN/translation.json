@@ -1,0 +1,9 @@
+{
+	"command": {},
+	"global": {
+		"error": {
+			"noCommandMatching": "未找到与 {{commandName}} 匹配的命令",
+			"occurred": "执行 {{commandName}} 时发生了错误"
+		}
+	}
+}

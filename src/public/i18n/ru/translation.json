@@ -1,0 +1,37 @@
+{
+	"command": {
+		"modping-setup": {
+			"embed": {
+				"title": "🌍 Mod Ping — Подписка на часовой пояс",
+				"description": "Подпишись на свою группу часового пояса, чтобы получать <@&{{modPingRoleId}}> только в активные часы (с 8:00 до 2:00 по местному времени).\n\nНажми на кнопку ниже, чтобы включить/отключить свою роль часового пояса.\nМожно выбрать **несколько** групп при необходимости.\n\n> Участники **без выбранной роли** будут получать Mod Ping **круглосуточно**.",
+				"field_active": "Активен: **{{start}} → {{end}} (местное время)**",
+				"timezone": {
+					"west-americas": "Западная Америка",
+					"east-americas": "Восточная Америка",
+					"europe-africa": "Европа & Африка",
+					"middle-east-india": "Ближний Восток & Индия",
+					"asia-pacific": "Азия & Тихоокеанский регион"
+				},
+				"more_info": "Подробнее"
+			},
+			"info": {
+				"no_role": "У тебя не выбрана ни одна роль часового пояса. Ты будешь получать упоминания <@&{{modPingRoleId}}> **круглосуточно**.",
+				"active_roles": "🕐 Твой **@Mod Ping** будет активен в следующие часы:\n\n{{schedules}}",
+				"schedule_line": "**{{label}}** — {{start}} → {{end}}"
+			},
+			"response": {
+				"success": "✅ Embed ModPing отправлен в <#{{channelId}}>",
+				"unknown_group": "❌ Неизвестная группа часового пояса.",
+				"role_not_found": "❌ Роль не найдена.",
+				"role_added": "✅ Роль **{{label}}** добавлена. Ты будешь получать <@&{{modPingRoleId}}> в активные часы.",
+				"role_removed": "✅ Роль **{{label}}** удалена. *Обрати внимание: если у тебя не осталось активных ролей часового пояса, ты будешь получать <@&{{modPingRoleId}}> круглосуточно.*"
+			}
+		}
+	},
+	"global": {
+		"error": {
+			"noCommandMatching": "No command matching {{commandName}} was found",
+			"occurred": "An error occurred while executing {{commandName}}"
+		}
+	}
+}
