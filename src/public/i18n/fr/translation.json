@@ -19,19 +19,6 @@
 			}
 		},
 		"modping-setup": {
-			"embed": {
-				"title": "🌍 Mod Ping — Abonnement Fuseau Horaire",
-				"description": "Abonne-toi à ton groupe de fuseau horaire pour recevoir <@&{{modPingRoleId}}> uniquement pendant tes heures actives (8h → 2h heure locale).\n\nClique sur un bouton ci-dessous pour activer/désactiver ton rôle de fuseau horaire.\nTu peux sélectionner **plusieurs** groupes si besoin.\n\n> Les membres **sans rôle sélectionné** recevront le Mod Ping **24h/24**.",
-				"field_active": "Actif : **{{start}} → {{end}} (heure locale)**",
-				"timezone": {
-					"west-americas": "Amériques Ouest",
-					"east-americas": "Amériques Est",
-					"europe-africa": "Europe & Afrique",
-					"middle-east-india": "Moyen-Orient & Inde",
-					"asia-pacific": "Asie & Pacifique"
-				},
-				"more_info": "Plus d'infos"
-			},
 			"info": {
 				"no_role": "Tu n'as aucun rôle de fuseau horaire sélectionné. Tu recevras les mentions <@&{{modPingRoleId}}> **24h/24**.",
 				"active_roles": "🕐 Ton **@Mod Ping** sera actif durant ces horaires :\n\n{{schedules}}",

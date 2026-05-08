@@ -21,7 +21,7 @@
 		"modping-setup": {
 			"embed": {
 				"title": "🌍 Mod Ping — Timezone Subscription",
-				"description": "Subscribe to your timezone group to receive <@&{{modPingRoleId}}> only during your active hours (8am → 2am local time).\n\nClick a button below to toggle your timezone role.\nYou can select **multiple** groups if needed.\n\n> Members with **no role selected** will receive Mod Ping **24/7**.",
+				"description": "Subscribe to timezone groups to receive <@&{{modPingRoleId}}> only during your active hours.\n\nEach group covers an **8-hour window (8am → 4pm local time)**. Select **2–3 groups** to cover your full availability.\nClick a button below to toggle a group.\n\n> Members with **no role selected** will receive Mod Ping **24/7**.",
 				"field_active": "Active: **{{start}} → {{end}} (local time)**",
 				"timezone": {
 					"west-americas": "West Americas",
