@@ -6,14 +6,47 @@ import {
 	MessageFlags,
 	ThreadChannel,
 } from 'discord.js'
-import { Discord } from 'discordx'
+import { Discord, On, type ArgsOf } from 'discordx'
 import { config } from '../../config/config.js'
 import { I18nSlash } from '../../decorators/i18n/discord/decorators/slash.i18n.decorator.js'
 import { logger } from '../../services/logger/logger.service.js'
 import { I18nSlashOption } from '../../decorators/i18n/discord/decorators/slash-option.i18n.decorator.js'
 
+const CLOSE_REASONS = [
+	'Resolved',
+	'Duplicate',
+	'Not a suggestion',
+	'Not a bug',
+	'Noted and forwarded to the devs.',
+	'The issue has been reported and is currently being investigated',
+]
+
 @Discord()
 export class CloseBugCommand {
+	@On({ event: 'interactionCreate' })
+	async onAutocomplete([
+		interaction,
+	]: ArgsOf<'interactionCreate'>): Promise<void> {
+		if (!interaction.isAutocomplete()) return
+
+		const focusedValue = interaction.options.getFocused().toLowerCase()
+
+		if (!focusedValue) {
+			await interaction.respond(
+				CLOSE_REASONS.map((r) => ({ name: r, value: r }))
+			)
+			return
+		}
+
+		const filtered = CLOSE_REASONS.filter((r) =>
+			r.toLowerCase().includes(focusedValue)
+		)
+
+		await interaction.respond(
+			filtered.slice(0, 25).map((r) => ({ name: r, value: r }))
+		)
+	}
+
 	@I18nSlash({
 		name: 'close',
 		description: 'command.close.description',
@@ -27,6 +60,7 @@ export class CloseBugCommand {
 			required: true,
 			name: 'reason',
 			defaultLanguage: 'en',
+			autocomplete: true,
 		})
 		reason: string,
 		interaction: CommandInteraction
