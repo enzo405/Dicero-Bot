@@ -12,33 +12,34 @@ import { I18nSlash } from '../../decorators/i18n/discord/decorators/slash.i18n.d
 import { logger } from '../../services/logger/logger.service.js'
 import { I18nSlashOption } from '../../decorators/i18n/discord/decorators/slash-option.i18n.decorator.js'
 
-const CLOSE_REASONS = [
-	'Resolved',
-	'Duplicate',
-	'Not a suggestion',
-	'Not a bug',
-	'Noted and forwarded to the devs.',
-	'The issue has been reported and is currently being investigated',
-]
-
 @Discord()
 export class CloseBugCommand {
+	private readonly CLOSE_REASONS = [
+		'Resolved',
+		'Duplicate',
+		'Not a suggestion',
+		'Not a bug',
+		'Noted and forwarded to the devs.',
+		'The issue has been reported and is currently being investigated',
+	]
+
 	@On({ event: 'interactionCreate' })
 	async onAutocomplete([
 		interaction,
 	]: ArgsOf<'interactionCreate'>): Promise<void> {
 		if (!interaction.isAutocomplete()) return
+		if (interaction.commandName !== 'close') return
 
 		const focusedValue = interaction.options.getFocused().toLowerCase()
 
 		if (!focusedValue) {
 			await interaction.respond(
-				CLOSE_REASONS.map((r) => ({ name: r, value: r }))
+				this.CLOSE_REASONS.map((r) => ({ name: r, value: r }))
 			)
 			return
 		}
 
-		const filtered = CLOSE_REASONS.filter((r) =>
+		const filtered = this.CLOSE_REASONS.filter((r) =>
 			r.toLowerCase().includes(focusedValue)
 		)
 
